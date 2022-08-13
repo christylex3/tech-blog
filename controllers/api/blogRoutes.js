@@ -1,12 +1,11 @@
 const router = require("express").Router();
 const { Blog, User } = require("../../models");
-// const loginAuth = require("../../utils");
+const loginAuth = require("../../utils");
 
 // TODO: Add in login authentication
 
-
 // Creates a new blog
-router.post("/", async (req, res) => {
+router.post("/", loginAuth, async (req, res) => {
     try {
         const newBlog = await Blog.create({
             ...req.body,
@@ -77,6 +76,27 @@ router.put("/:id", async (req, res) => {
 		})
 		.catch((err) => res.json(err));
 	} catch (err){
+		res.status(500).json(err);
+	}
+});
+
+// Deletes the blog with that id
+router.delete("/:id", loginAuth, async (req, res) => {
+	try {
+		const blogData = await Blog.destroy({
+			where: {
+				id: req.params.id,
+                user_id: req.session.user_id,
+			},
+		});
+		if (!blogData) {
+			res.status(404).json({
+				message: "No blog found with that id!",
+			});
+			return;
+		}
+		res.status(200).json(blogData);
+	} catch (err) {
 		res.status(500).json(err);
 	}
 });
