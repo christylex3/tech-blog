@@ -20,7 +20,7 @@ router.post("/", async (req, res) => {
     }
 });
 
-// GET a specific blog by id and includes the name of the user
+// Gets a specific blog by id and includes the name of the user
 router.get("/:id", async (req, res) => {
     try {
         // Finds the blog by id and includes the name of the user
@@ -53,4 +53,30 @@ router.get("/:id", async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
+});
+
+// Updates a blog
+router.put("/:id", async (req, res) => {
+	try {
+		Blog.update(
+			{
+				// All the fields you can update in the blog
+				name: req.body.name,
+                body: req.body.body,
+			},
+			{
+				// Gets the blog based on its id given in the request parameters
+				where: {
+					id: req.params.id,
+				},
+			}
+		)
+		.then((updatedBlog) => {
+			// Sends the updated blog as a json response
+			res.json(updatedBlog);
+		})
+		.catch((err) => res.json(err));
+	} catch (err){
+		res.status(500).json(err);
+	}
 });
