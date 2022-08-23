@@ -21,7 +21,7 @@ router.get("/", async (req, res) => {
 		// Renders the serialized data into a template
 		res.render("homepage", {
 			blogs,
-			// logged_in: req.session.logged_in
+			logged_in: req.session.logged_in
 		});
 	} catch (err) {
 		res.status(500).json(err);

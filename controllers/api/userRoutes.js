@@ -1,6 +1,17 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
+router.get("/", (req, res) => {
+	// If the user is already logged in, redirect the request to another route
+	if (req.session.logged_in) {
+		res.redirect("/");
+		return;
+	}
+
+	res.render("signup");
+});
+
+// 
 router.post("/", async (req, res) => {
 	try {
 		const userData = await User.create(req.body);
@@ -58,5 +69,8 @@ router.post("/logout", (req, res) => {
 		res.status(404).end();
 	}
 });
+
+
+
 
 module.exports = router;

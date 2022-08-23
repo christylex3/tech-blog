@@ -2,7 +2,7 @@
 				<h1>The Tech Blog</h1>
 			</section>
 		</header>
-<form class="form">
+<form class="login-form block">
     <article class="login-card">
         <section class="d-flex justify-content-between text-white login-header p-2">
             <h2>Login</h2>
@@ -11,15 +11,48 @@
             <p class="mb-0 mt-2 p-2">
                 Username
             </p>
-            <input class="p-2 form-input" type="username" id="user-login" />
+            <input class="p-2 form-input" type="username" id="username" />
             <p class="mb-0 mt-2 p-2">
                 Password
             </p>
-            <input class="p-2 form-input" type="password" id="password-login" />
-            <button class="login-btn mt-3 p-2 text-white" >Login!</button>
-            <label class="mb-2 p-2">
+            <input class="p-2 form-input" type="password" id="password" />
+            {{!-- <button class="login-btn mt-3 p-2 text-white" >Login!</button> --}}
+            <input
+				type="submit"
+				value="Login"
+				onclick="loginHandler(event)"
+				class="btn btn-outline-success login-btn mt-3 p-2 text-white"
+			/>
+            <a class="text-dark" onclick="toggleSignupHandler(event)">
+                {{!-- <label class="mb-2 p-2"> --}}
                 Sign up instead
-            </label>
+                {{!-- </label> --}}
+            </a>
+            
+        </section>
+    </article>
+</form>
+
+<form class="signup-form none">
+    <article class="login-card">
+        <section class="d-flex justify-content-between text-white login-header p-2">
+            <h2>Sign up</h2>
+        </section>
+        <section class="d-flex flex-column">
+            <p class="mb-0 mt-2 p-2">
+                Username
+            </p>
+            <input class="p-2" />
+            <p class="mb-0 mt-2 p-2">
+                Password
+            </p>
+            <input class="p-2" />
+            <button class="create-btn mt-3 p-2 text-white">Sign up!</button>
+            <a class="text-dark" onclick="toggleLoginHandler(event)">
+                {{!-- <label class="mb-2 p-2"> --}}
+                Login instead
+                {{!-- </label> --}}
+            </a>
         </section>
     </article>
 </form>

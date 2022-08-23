@@ -47,9 +47,13 @@ input, .login-btn, .create-btn, .delete-btn {
     margin: 0% 0.5%;
 }
 
-/* label {
-    margin-bottom: 1%;
-} */
+.hidden {
+    visibility: none;
+}
+.show {
+    visibility: block;
+}
+
 
 .login-btn, .create-btn, .delete-btn {
     background-color: var(--soft-black);
