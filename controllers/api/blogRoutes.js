@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Blog, User } = require("../../models");
-const loginAuth = require("../../utils");
+const loginAuth = require("../../utils/auth.js");
 
 // TODO: Add in login authentication
 
@@ -100,3 +100,5 @@ router.delete("/:id", loginAuth, async (req, res) => {
 		res.status(500).json(err);
 	}
 });
+
+module.exports = router;

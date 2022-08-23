@@ -29,7 +29,7 @@ h3 {
     font-size: 1rem;
 }
 
-p {
+p, label {
     font-size: 1.3rem;
 }
 
@@ -39,19 +39,40 @@ a {
     font-size: 1.2rem;
 }
 
+input {
+    font-size: 1.3rem;
+}
+
+input, .login-btn, .create-btn, .delete-btn {
+    margin: 0% 0.5%;
+}
+
+/* label {
+    margin-bottom: 1%;
+} */
+
+.login-btn, .create-btn, .delete-btn {
+    background-color: var(--soft-black);
+    border-radius: 10px;
+}
+
+.login-btn:hover, .create-btn:hover, .delete-btn:hover {
+    opacity: 0.7;
+}
+
 .title {
     background-color: var(--light-green);
     border-radius: 10px;
     box-shadow: 7px 7px var(--grey);
 }
 
-.blog-card {
-    margin: 1rem 2rem;
+.blog-card, .login-card, .new-post-card {
+    margin: 2% 5%;
     border-style: solid;
     border-color: var(--soft-black);
     border-width: 3px;
 }
 
-.blog-header {
+.blog-header, .login-header {
     background-color: var(--soft-black);
 }

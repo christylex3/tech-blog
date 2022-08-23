@@ -16,19 +16,15 @@
 		<header>
 			<nav class="navbar d-flex">
 				<section class="d-flex flex-row">
-					<a href="#" class="text-light text-decoration-none">Home</a>
+					<a href="/" class="text-light text-decoration-none">Home</a>
 					<a href="#" class="text-light text-decoration-none">Dashboard</a>
-					<a href="#" class="text-light text-decoration-none">Login</a>
-					<a href="#" class="text-light text-decoration-none">Logout</a>
+					{{#if logged_in}}
+						<a href="#" class="text-light text-decoration-none">Logout</a>
+					{{else}}
+						<a href="/login" class="text-light text-decoration-none">Login</a>
+					{{/if}}
 				</section>
 			</nav>
-			<section class="title">
-				<h1>The Tech Blog</h1>
-			</section>
-		</header>
-	<main>
-		{{{body}}}
-	</main>
-	<footer></footer>
-</body>
+			{{{body}}}
+	</body>
 </html>
