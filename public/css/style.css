@@ -66,13 +66,13 @@ input, .login-btn, .create-btn, .update-btn, .submit-btn, .delete-btn {
     box-shadow: 7px 7px var(--grey);
 }
 
-.blog-card, .login-card, .new-post-card, .user-blog-card {
+.blog-card, .login-card, .new-post-card, .user-blog-card, .edit-blog-card {
     margin: 2% 5%;
     border-style: solid;
     border-color: var(--soft-black);
     border-width: 3px;
 }
-.user-blog-card {
+.user-blog-card, .edit-blog-card {
     border-radius: 10px;
 }
 

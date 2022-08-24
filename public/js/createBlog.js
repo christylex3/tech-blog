@@ -11,7 +11,6 @@ async function createBlogHandler(event) {
     if (name && body) {
         const response = await fetch(`/api/blogs`, {
             method: `POST`,
-            // body: JSON.stringify({ name: blogName, body: blogBody }),
             body: JSON.stringify({ name, body }),
             headers: {
                 "Content-Type": "application/json",

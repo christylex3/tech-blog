@@ -12,7 +12,7 @@
 					<h3>{{date_formatted blog.date_created}}</h3>
 				</a>
 				<section>
-					<button class="update-btn btn btn-info mb-3 mt-3 p-2 text-white">Edit</button>
+					<button class="update-btn btn btn-info mb-3 mt-3 p-2 text-white" blog-id="{{blog.id}}" onclick="directToForm(event)">Edit</button>
 					<button class="delete-btn btn btn-danger mb-3 mt-3 p-2 text-white"  blog-id="{{blog.id}}" onclick="deleteBlogHandler(event)">Delete</button>
 				</section>
 			</section>
@@ -21,27 +21,25 @@
 	{{/if}}
 
 
-
-
-
 	{{!-- <button class="create-btn mb-3 mt-3 p-2 text-white" onclick="createBlogHandler(event)">Create New Blog</button> --}}
 	<article class="login-card">
-	<section class="d-flex justify-content-between text-white login-header p-2">
-        <h2>Create New Blog</h2>
-    </section>
-    <section class="d-flex flex-column">
-        <p class="mb-0 mt-2 p-2">
-            Title
-        </p>
-        <input id="blog-name" class="p-2">
-        <p class="mb-0 mt-2 p-2">
-            Content
-        </p>
-        <input id="blog-body" class="p-2">
-        <button class="create-btn mb-3 mt-3 p-2 text-white" onclick="createBlogHandler(event)">Create</button>
-	</section>
-</article>
+		<section class="d-flex justify-content-between text-white login-header p-2">
+			<h2>Create New Blog</h2>
+		</section>
+		<section class="d-flex flex-column">
+			<p class="mb-0 mt-2 p-2">
+				Title
+			</p>
+			<input id="blog-name" class="p-2">
+			<p class="mb-0 mt-2 p-2">
+				Content
+			</p>
+			<input id="blog-body" class="p-2">
+			<button class="create-btn mb-3 mt-3 p-2 text-white" onclick="createBlogHandler(event)">Create</button>
+		</section>
+	</article>
 </main>
 
 <script src="/js/createBlog.js"></script>
+<script src="/js/editBlog.js"></script>
 <script src="/js/deleteBlog.js"></script>

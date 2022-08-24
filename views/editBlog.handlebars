@@ -1,0 +1,25 @@
+    <section class="title">
+		<h1>Editing blog</h1>
+	</section>
+</header>
+
+<main>
+    <article class="edit-blog-card">
+		<section class="d-flex justify-content-between text-white login-header p-2">
+			<h2>Editing</h2>
+		</section>
+		<section class="d-flex flex-column">
+			<p class="mb-0 mt-2 p-2">
+				Title
+			</p>
+			<input id="blog-name" class="p-2" placeholder="{{name}}">
+			<p class="mb-0 mt-2 p-2">
+				Content
+			</p>
+			<input id="blog-body" class="p-2" placeholder="{{body}}">
+			<button class="update-btn mb-3 mt-3 p-2 text-white" blog-id="{{id}}" onclick="editBlogHandler(event)">Update</button>
+		</section>
+	</article>
+</main>
+
+<script src="/js/editBlog.js"></script>

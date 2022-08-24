@@ -52,6 +52,8 @@ router.get("/blogs/:id", async (req, res) => {
 });
 
 
+
+
 // Use loginAuth middleware to prevent access to route
 router.get("/dashboard", loginAuth, async (req, res) => {
 	try {
