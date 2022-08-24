@@ -26,7 +26,7 @@ Users can sign up to the site, log in, and blog about tech-related concepts. Whe
 
 ## Heroku
 
-Deployed App Link: 
+Deployed App Link: https://simply-tech-blog.herokuapp.com/
 
 ## Contribution
 
