@@ -7,14 +7,14 @@ router.get("/", async (req, res) => {
 	try {
 		// Finds all blogs and includes the name of the users
 		const blogData = await Blog.findAll({
-			include: [
-				{
-					model: User,
-					attributes: ["name"],
-				},
-			],
+			// include: [
+			// 	{
+			// 		model: User,
+			// 		attributes: ["name"],
+			// 	},
+			// ],
 		});
-
+		console.log(req.session);
 		// Serializes data so the template can read it
 		const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
@@ -50,15 +50,38 @@ router.get("/blog/:id", async (req, res) => {
 	}
 });
 
+
+// Use loginAuth middleware to prevent access to route
+router.get("/dashboard", loginAuth, async (req, res) => {
+	try {
+	// Find the logged in user based on the session ID
+		const userData = await User.findByPk(req.session.user_id, {
+			attributes: { exclude: ['password'] },
+			include: [{ model: Blog }],
+		});
+
+		const user = userData.get({ plain: true });
+
+		res.render('dashboard', {
+			...user,
+			logged_in: true
+		});
+	} catch (err) {
+		res.status(500).json(err);
+	}
+});
+
 router.get("/login", (req, res) => {
 	// If the user is already logged in, redirect the request to another route
 	if (req.session.logged_in) {
-		res.redirect("/profile");
+		res.redirect("/dashboard");
 		return;
 	}
 
 	res.render("login");
 });
+
+
 
 module.exports = router;
 

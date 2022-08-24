@@ -9,13 +9,13 @@
         </section>
         <section class="d-flex flex-column">
             <p class="mb-0 mt-2 p-2">
-                Username
+                Email
             </p>
-            <input class="p-2 form-input" type="username" id="username" />
+            <input class="p-2 form-input" type="text" id="username-login" />
             <p class="mb-0 mt-2 p-2">
                 Password
             </p>
-            <input class="p-2 form-input" type="password" id="password" />
+            <input class="p-2 form-input" type="password" id="password-login" />
             {{!-- <button class="login-btn mt-3 p-2 text-white" >Login!</button> --}}
             <input
 				type="submit"
@@ -40,14 +40,14 @@
         </section>
         <section class="d-flex flex-column">
             <p class="mb-0 mt-2 p-2">
-                Username
+                Email
             </p>
-            <input class="p-2" />
+            <input class="p-2 form-input" type="text" id="email-signup" />
             <p class="mb-0 mt-2 p-2">
                 Password
             </p>
-            <input class="p-2" />
-            <button class="create-btn mt-3 p-2 text-white">Sign up!</button>
+            <input class="p-2 form-input" type="password" id="password-signup" />
+            <button class="create-btn mt-3 p-2 text-white" onclick="signUpHandler(event)">Sign up!</button>
             <a class="text-dark" onclick="toggleLoginHandler(event)">
                 {{!-- <label class="mb-2 p-2"> --}}
                 Login instead

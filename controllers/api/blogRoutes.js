@@ -24,12 +24,12 @@ router.get("/:id", async (req, res) => {
     try {
         // Finds the blog by id and includes the name of the user
         const blogData = await Blog.findByPk(req.params.id, {
-            include: [
-                {
-                    model: User,
-                    attributes: ["name"],
-                },
-            ],
+            // include: [
+            //     {
+            //         model: User,
+            //         attributes: ["name"],
+            //     },
+            // ],
         });
 
         // Serializes data so the template can read it

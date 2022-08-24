@@ -1,17 +1,20 @@
 async function loginHandler(event) {
 	event.preventDefault();
 
-	const username = document.querySelector("#username").value.trim();
-	const password = document.querySelector("#password").value.trim();
+	const username = document.querySelector("#username-login").value.trim();
+	const password = document.querySelector("#password-login").value.trim();
 	
     // TODO: Fix id to be unique
     const user_id = 1;
 
+
+	console.log(username);
+	console.log(password);
     // Grabs input values from login
-	const response = await fetch(`/api/login`, {
+	const response = await fetch(`/api/users/login`, {
 		method: "POST",
 		body: JSON.stringify({
-			username,
+			email,
             password,
 			user_id,
 		}),
@@ -25,6 +28,37 @@ async function loginHandler(event) {
 		document.location.replace("/");
 	}
 }
+
+async function signUpHandler(event) {
+	event.preventDefault();
+
+	const email = document.querySelector("#email-signup").value.trim();
+	const password = document.querySelector("#password-signup").value.trim();
+	
+    // TODO: Fix id to be unique
+    // const user_id = 1;
+
+
+	console.log(email);
+	console.log(password);
+    // Grabs input values from login
+	const response = await fetch(`/api/users/signup`, {
+		method: "POST",
+		body: JSON.stringify({
+			email,
+            password,
+			// user_id,
+		}),
+		headers: {
+			"Content-Type": "application/json",
+		},
+	});
+	if (response.ok) {
+		// TODO: Fix where logout button shows up instead of login without refresh
+		document.location.replace("/");
+	}
+}
+
 
 function toggleSignupHandler(event) {
 	event.preventDefault();
