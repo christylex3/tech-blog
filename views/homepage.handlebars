@@ -19,4 +19,19 @@
 			</p>
 		</section>
 	</article>
+	{{#each blogs as |blog| }}
+	<article class="blog-card">
+	<section
+			class="d-flex justify-content-between text-white blog-header p-2"
+		>
+			<h2>{{blog.name}}</h2>
+			<h3>Posted by {{blog.user.email}} on {{blog.date_created}}</h3>
+		</section>
+		<section>
+			<p class="mt-3 p-2">
+				{{blog.body}}
+			</p>
+		</section>
+	</article>
+	{{/each}}
 </main>

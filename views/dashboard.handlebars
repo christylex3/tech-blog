@@ -9,7 +9,41 @@
 			<h3>5/8/2020</h3>
 		</section>
 	</article>
-	<button class="create-btn mb-3 mt-3 p-2 text-white" onclick="createBlogHandler(event)">Create New Blog</button>
+
+	{{#if blogs.length}}
+	{{#each blogs as |blog|}}
+		<article class="user-blog-card">
+			<section class="d-flex justify-content-between text-white blog-header p-2">
+				<a href="/blog/{{blog.id}}">
+					<h2>{{blog.name}}</h2>
+					<h3>{{blog.date_created}}</h3>
+				</a>
+			</section>
+		</article>
+		{{/each}}
+	{{/if}}
+
+
+
+
+
+	{{!-- <button class="create-btn mb-3 mt-3 p-2 text-white" onclick="createBlogHandler(event)">Create New Blog</button> --}}
+	<article class="login-card">
+	<section class="d-flex justify-content-between text-white login-header p-2">
+        <h2>Create New Blog</h2>
+    </section>
+    <section class="d-flex flex-column">
+        <p class="mb-0 mt-2 p-2">
+            Title
+        </p>
+        <input id="blog-name" class="p-2">
+        <p class="mb-0 mt-2 p-2">
+            Content
+        </p>
+        <input id="blog-body" class="p-2">
+        <button class="create-btn mb-3 mt-3 p-2 text-white" onclick="createBlogHandler(event)">Create</button>
+	</section>
+</article>
 </main>
 
 <script src="/js/createBlog.js"></script>

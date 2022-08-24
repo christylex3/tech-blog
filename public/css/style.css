@@ -43,7 +43,7 @@ input {
     font-size: 1.3rem;
 }
 
-input, .login-btn, .update-btn, .submit-btn, .delete-btn {
+input, .login-btn, .create-btn, .update-btn, .submit-btn, .delete-btn {
     margin: 0% 0.5%;
 }
 
@@ -56,9 +56,9 @@ input, .login-btn, .update-btn, .submit-btn, .delete-btn {
     opacity: 0.7;
 }
 
-.create-btn {
+/* .create-btn {
     margin-left: 5%;
-}
+} */
 
 .title {
     background-color: var(--light-green);
@@ -75,6 +75,12 @@ input, .login-btn, .update-btn, .submit-btn, .delete-btn {
 .user-blog-card {
     border-radius: 10px;
 }
+
+
+.user-blog-card > a {
+    text-decoration: none;
+}
+
 
 .blog-header, .login-header {
     background-color: var(--soft-black);
