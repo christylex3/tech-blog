@@ -24,12 +24,12 @@ router.get("/:id", async (req, res) => {
     try {
         // Finds the blog by id and includes the name of the user
         const blogData = await Blog.findByPk(req.params.id, {
-            // include: [
-            //     {
-            //         model: User,
-            //         attributes: ["username"],
-            //     },
-            // ],
+            include: [
+                {
+                    model: User,
+                    attributes: ["username"],
+                },
+            ],
         });
 
         // Serializes data so the template can read it
@@ -38,7 +38,7 @@ router.get("/:id", async (req, res) => {
         // Renders...
         res.render("blog", {
             ...blog,
-            // logged_in: req.session.logged_in
+            logged_in: req.session.logged_in
         });
 
         // If blog with the id does not exist, inform user
