@@ -14,7 +14,7 @@ async function loginHandler(event) {
 	const response = await fetch(`/api/users/login`, {
 		method: "POST",
 		body: JSON.stringify({
-			email,
+			username,
             password,
 			user_id,
 		}),
@@ -32,20 +32,20 @@ async function loginHandler(event) {
 async function signUpHandler(event) {
 	event.preventDefault();
 
-	const email = document.querySelector("#email-signup").value.trim();
+	const username = document.querySelector("#username-signup").value.trim();
 	const password = document.querySelector("#password-signup").value.trim();
 	
     // TODO: Fix id to be unique
     // const user_id = 1;
 
 
-	console.log(email);
+	console.log(username);
 	console.log(password);
     // Grabs input values from login
 	const response = await fetch(`/api/users/signup`, {
 		method: "POST",
 		body: JSON.stringify({
-			email,
+			username,
             password,
 			// user_id,
 		}),
