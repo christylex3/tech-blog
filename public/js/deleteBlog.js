@@ -7,6 +7,7 @@ async function deleteBlogHandler(event) {
             method: "DELETE",
         });
 
+        // Refresh dashboard when successfully deleted blog
         if (response.ok) {
             document.location.replace("/dashboard");
         } else {

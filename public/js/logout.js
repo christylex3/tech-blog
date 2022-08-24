@@ -12,7 +12,3 @@ async function logoutHandler(event) {
     }
   };
   
-//   var logoutLink = document.querySelector('#logout');
-//   console.log(logoutLink);
-//   logoutLink.addEventListener('click', logoutHandler);
-  
