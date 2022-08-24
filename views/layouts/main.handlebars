@@ -20,7 +20,7 @@
 					<a href="/" class="text-light text-decoration-none">Home</a>
 					<a href="/dashboard" class="text-light text-decoration-none">Dashboard</a>
 					{{#if logged_in}}
-					<button id="logout" class="text-dark text-decoration-none" onclick="logoutHandler(event)">Logout</button>
+					<button id="logout" class="btn btn-danger text-white text-decoration-none" onclick="logoutHandler(event)">Logout</button>
 						{{!-- <a id="logout" class="text-light text-decoration-none">Logout</a> --}}
 					{{else}}
 						<a href="/login" class="text-light text-decoration-none">Login</a>
